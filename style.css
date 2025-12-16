@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Georgia&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffdf6; 
+    color: #4a3b2b; 
+    overflow-x: hidden; 
+}
+
+
+.navbar {
+    background: linear-gradient(135deg, #8b5a2b, #d4a017) !important;
+    border-bottom: 5px solid #6b4226; 
+    box-shadow: 0 4px 8px rgba(139, 90, 43, 0.3);
+}
+
+.navbar-brand {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+
+h2 {
+    color: #8b5a2b; 
+    border-left: 6px solid #d4a017; 
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+h3, h4, h5 {
+    color: #6b4226; 
+}
+
+
+footer {
+    background-color: #3e2723 !important; 
+    color: #f1e7d0 !important; 
+    margin-top: 50px;
+    border-top: 4px solid #d4a017;
+}
+
+
+
+.hero-img {
+    height: 450px;
+    object-fit: cover;
+    filter: brightness(0.9) sepia(0.1); 
+}
+
+
+.card {
+    border: 1px solid #f0e0c0; 
+    border-radius: 12px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card-title {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: #a0522d; 
+}
+
+
+.btn-danger, .btn-outline-danger:hover {
+    background-color: #c49025 !important; 
+    border-color: #c49025 !important;
+    color: #fff !important;
+}
+
+.btn-danger:hover {
+    background-color: #a06e1b !important; 
+    border-color: #a06e1b !important;
+}
+
+
+.btn-outline-danger {
+    color: #c49025 !important;
+    border-color: #c49025 !important;
+}
+
+
+.badge-best-seller {
+    background-color: #ffd700 !important; 
+    color: #3e2723 !important; 
+}
+
+
+
+
+.card-hover-effect {
+    transform: translateY(-8px);
+    border-color: #d4a017; 
+    box-shadow: 0 10px 25px rgba(212, 160, 23, 0.3) !important; 
+}
