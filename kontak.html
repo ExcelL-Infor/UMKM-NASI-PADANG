@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - Nasi Padang Pagi-Sore</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Pagi-Sore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        
+        <div id="alertSukses" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+            <strong>Pesan Terkirim!</strong> Terima kasih telah menghubungi Nasi Padang Pagi-Sore.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-5">
+                <h2 class="mb-4">Hubungi Kami</h2>
+                <p>Ada pertanyaan seputar menu atau pemesanan katering? Isi formulir di bawah ini:</p>
+                
+                <form id="formKontak">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama" required placeholder="Masukkan nama Anda">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required placeholder="nama@email.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nohp" class="form-label">Nomor HP / WA</label>
+                        <input type="text" class="form-control" id="nohp" required maxlength="15" placeholder="08xxxxxxxxxx">
+                        <div id="hpHelp" class="form-text text-danger d-none">Hanya boleh angka!</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="kategori" class="form-label">Kategori Pesan</label>
+                        <select id="kategori" class="form-select">
+                            <option value="umum">Pertanyaan Umum</option>
+                            <option value="produk">Pemesanan / Produk</option>
+                            <option value="kerjasama">Kerja Sama / Franchise</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pesan" class="form-label">Isi Pesan</label>
+                        <textarea class="form-control" id="pesan" rows="4"></textarea>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="langganan">
+                        <label class="form-check-label" for="langganan">Saya ingin menerima info promo terbaru</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger">Kirim Pesan</button>
+                    <button type="button" id="clearBtn" class="btn btn-secondary">Hapus Data</button>
+                </form>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1">
+                <div class="card shadow-sm border-warning">
+                    <div class="card-header bg-warning text-dark fw-bold">
+                        Webinar Promosi Produk
+                    </div>
+                    <div class="card-body bg-light">
+                        <h5 class="card-title">Ingin Belajar Bisnis Kuliner?</h5>
+                        <p class="card-text small">Daftarkan diri Anda untuk webinar gratis manajemen bisnis rumah makan Padang.</p>
+                        
+                        <form id="formWebinar">
+                            <div class="mb-2">
+                                <label class="form-label small">Topik Webinar:</label>
+                                <select class="form-select form-select-sm" id="webinar_topik">
+                                    <option value="">-- Pilih Topik --</option>
+                                    <option value="marketing">Digital Marketing Kuliner</option>
+                                    <option value="branding">Branding Nasi Padang</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="webinar_syarat">
+                                <label class="form-check-label small" for="webinar_syarat">Setuju Syarat & Ketentuan</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-danger w-100 btn-sm" onclick="alert('Pendaftaran Webinar ditutup sementara!')">Daftar Webinar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-3 bg-white border rounded">
+                    <h5>Lokasi Kami</h5>
+                    <p>Jl. Raya Padang No. 123<br>
+                    Buka: Setiap Hari (08.00 - 21.00 WIB)</p>
+                    <a href="#" class="btn btn-success btn-sm">Chat WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p>&copy; 2025 Nasi Padang Pagi-Sore. Semua hak dilindungi.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            
+
+            $('#nohp').on('input', function() {
+                var value = $(this).val();
+                if (/[^0-9]/.test(value)) {
+                    $(this).val(value.replace(/[^0-9]/g, ''));
+                    $('#hpHelp').removeClass('d-none'); 
+                } else {
+                    $('#hpHelp').addClass('d-none'); 
+                }
+            });
+            $('#clearBtn').click(function() {
+                if(confirm("Apakah Anda yakin ingin menghapus isi formulir?")) {
+                    $('#formKontak')[0].reset();
+                }
+            });
+            $('#formKontak').on('submit', function(e) {
+                e.preventDefault(); 
+                
+
+                var nama = $('#nama').val();
+                $('#alertSukses').removeClass('d-none').html(
+                    `<strong>Halo ${nama}!</strong> Pesan Anda berhasil dikirim. Kami akan menghubungi via Email.`
+                     + `<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`
+                ).fadeIn();
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                $(this)[0].reset();
+            });
+        });
+    </script>
+</body>
+</html>
