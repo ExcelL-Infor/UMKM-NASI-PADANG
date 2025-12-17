@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesan Antar - Nasi Padang Pagi-Sore</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Pagi-Sore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="kontak.html">Pesan Antar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+
+        <div id="alertSukses" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-5">
+                <h2 class="mb-4">Form Pemesanan Makanan</h2>
+                <p>Ingin makan enak tanpa repot? Isi formulir di bawah untuk layanan pesan antar (Delivery).</p>
+
+                <form id="formPesanMakan">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama Pemesan</label>
+                        <input type="text" class="form-control" id="nama" required placeholder="Masukkan nama Anda">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nohp" class="form-label">Nomor WhatsApp</label>
+                            <input type="text" class="form-control" id="nohp" required maxlength="15"
+                                placeholder="08xxxxxxxxxx">
+                            <div id="hpHelp" class="form-text text-danger d-none">Hanya boleh angka!</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email (Opsional)</label>
+                            <input type="email" class="form-control" id="email" placeholder="nama@email.com">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="menu_makanan" class="form-label fw-bold">Pilih Menu Makanan</label>
+                        <select id="menu_makanan" class="form-select" required>
+                            <option value="" selected disabled>-- Pilih Menu --</option>
+                            <option value="Nasi Rendang">Nasi Rendang - Rp 30.000</option>
+                            <option value="Nasi Ayam Bakar">Nasi Ayam Bakar - Rp 25.000</option>
+                            <option value="Nasi Ayam Pop">Nasi Ayam Pop - Rp 28.500</option>
+                            <option value="Nasi Dendeng Batoko">Nasi Dendeng Batoko - Rp 35.000</option>
+                            <option value="Nasi Telur Dadar">Nasi Telur Dadar - Rp 15.000</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="jumlah_porsi" class="form-label fw-bold">Jumlah Porsi</label>
+                        <input type="number" class="form-control" id="jumlah_porsi" min="1" value="1" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">Alamat Lengkap Pengiriman</label>
+                        <textarea class="form-control" id="alamat" rows="3" required placeholder="Jalan, Nomor Rumah, Patokan..."></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="catatan" class="form-label">Catatan Tambahan (Opsional)</label>
+                        <input type="text" class="form-control" id="catatan" placeholder="Contoh: Sambal dipisah, banyakin kuah...">
+                    </div>
+
+                    <button type="submit" class="btn btn-danger w-100 fw-bold">Pesan Sekarang</button>
+                </form>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1">
+                <div class="card shadow-sm border-warning">
+                    <div class="card-header bg-warning text-dark fw-bold">
+                        Webinar Promosi Produk
+                    </div>
+                    <div class="card-body bg-light">
+                        <h5 class="card-title">Ingin Belajar Bisnis Kuliner?</h5>
+                        <p class="card-text small">Daftarkan diri Anda untuk webinar gratis manajemen bisnis rumah makan
+                            Padang.</p>
+
+                        <form id="formWebinar">
+                            <div class="mb-2">
+                                <label class="form-label small">Nama Peserta</label>
+                                <input type="text" class="form-control form-control-sm" id="webinar_nama"
+                                    placeholder="Nama Lengkap">
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label small">Email</label>
+                                <input type="text" class="form-control form-control-sm" id="webinar_email"
+                                    placeholder="email@contoh.com">
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label small">No. HP</label>
+                                <input type="text" class="form-control form-control-sm" id="webinar_nohp"
+                                    placeholder="0812...">
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label small">Topik Webinar:</label>
+                                <select class="form-select form-select-sm" id="webinar_topik">
+                                    <option value="">-- Pilih Topik --</option>
+                                    <option value="marketing">Digital Marketing Kuliner</option>
+                                    <option value="branding">Branding Nasi Padang</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="webinar_syarat">
+                                <label class="form-check-label small" for="webinar_syarat">Setuju Syarat &
+                                    Ketentuan</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-outline-danger w-100 btn-sm">Daftar Webinar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-3 bg-white border rounded">
+                    <h5>Lokasi Kami</h5>
+                    <p>Jl. Raya Padang No. 123<br>
+                        Buka: Setiap Hari (08.00 - 21.00 WIB)</p>
+                    <a href="#" class="btn btn-success btn-sm">Chat WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p>&copy; 2025 Nasi Padang Pagi-Sore. Semua hak dilindungi.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            
+            // 1. Validasi Input Angka (Untuk No HP)
+            $('#nohp').on('input', function () {
+                var value = $(this).val();
+                if (/[^0-9]/.test(value)) {
+                    $(this).val(value.replace(/[^0-9]/g, ''));
+                    $('#hpHelp').removeClass('d-none');
+                } else {
+                    $('#hpHelp').addClass('d-none');
+                }
+            });
+
+            // 2. Logic Submit Form Pesan Makanan (Disesuaikan)
+            $('#formPesanMakan').on('submit', function (e) {
+                e.preventDefault();
+
+                // Ambil data dari form baru
+                var nama = $('#nama').val();
+                var menu = $('#menu_makanan').val();
+                var jumlah = $('#jumlah_porsi').val();
+                var alamat = $('#alamat').val();
+
+                // Tampilkan Alert Sukses dengan Rincian Pesanan
+                $('#alertSukses').removeClass('d-none').html(
+                    `<strong>Terima Kasih ${nama}!</strong><br>` +
+                    `Pesanan: <b>${jumlah} porsi ${menu}</b> sedang diproses.<br>` +
+                    `Akan dikirim ke: ${alamat}.` +
+                    `<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`
+                ).fadeIn();
+
+                // Scroll ke atas agar alert terlihat
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                
+                // Kosongkan form setelah pesan
+                $(this)[0].reset();
+            });
+        });
+    </script>
+</body>
+
+</html>

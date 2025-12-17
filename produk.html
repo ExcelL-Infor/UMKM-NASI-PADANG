@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produk & Menu - Nasi Padang Pagi-Sore</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <style>
-
         .card-unggulan {
             background: linear-gradient(45deg, #fff, #fff0f0);
             border: 2px solid #dc3545;
         }
+
         .badge-best-seller {
             position: absolute;
             top: 10px;
@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">Pagi-Sore</a>
@@ -46,27 +46,31 @@
     </nav>
 
     <div class="container my-5">
-        
+
         <div class="row justify-content-center mb-5">
             <div class="col-lg-10">
                 <div class="card card-unggulan shadow-lg overflow-hidden">
                     <span class="badge bg-warning text-dark rounded-pill badge-best-seller shadow">⭐ Best Seller</span>
                     <div class="row g-0 align-items-center">
                         <div class="col-md-6">
-                            <img src="images/Nasi Padang.jpg" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 300px;" alt="Nasi Rendang Spesial">
+                            <img src="images/Nasi Padang.jpg" class="img-fluid w-100 h-100"
+                                style="object-fit: cover; min-height: 300px;" alt="Nasi Rendang Spesial">
                         </div>
                         <div class="col-md-6">
                             <div class="card-body p-4 p-lg-5">
                                 <h5 class="text-danger fw-bold text-uppercase ls-1">Produk Unggulan</h5>
                                 <h2 class="card-title fw-bold mb-3 display-6">Nasi Rendang Autentik</h2>
                                 <p class="card-text text-muted">
-                                    Daging sapi pilihan yang dimasak perlahan (slow cooked) selama 8 jam dengan santan kental dan rempah-rempah rahasia keluarga Minang. Menghasilkan daging yang empuk, bumbu meresap hingga ke serat, dan cita rasa yang tak terlupakan.
+                                    Daging sapi pilihan yang dimasak perlahan (slow cooked) selama 8 jam dengan santan
+                                    kental dan rempah-rempah rahasia keluarga Minang. Menghasilkan daging yang empuk,
+                                    bumbu meresap hingga ke serat, dan cita rasa yang tak terlupakan.
                                 </p>
                                 <div class="d-flex align-items-center mb-3">
                                     <h3 class="text-danger fw-bold me-3">Rp 30.000</h3>
                                     <span class="text-decoration-line-through text-muted small">Rp 35.000</span>
                                 </div>
-                                <button class="btn btn-danger btn-lg px-4 shadow-sm" onclick="alert('Pesanan Nasi Rendang ditambahkan!')">Pesan Sekarang</button>
+                                <button class="btn btn-danger btn-lg px-4 shadow-sm"
+                                    onclick="alert('Pesanan Nasi Rendang ditambahkan!')">Pesan Sekarang</button>
                             </div>
                         </div>
                     </div>
@@ -75,7 +79,7 @@
         </div>
 
         <h2 class="mb-4">Daftar Menu Lengkap</h2>
-        
+
         <div class="card shadow-sm mb-5">
             <div class="card-body">
                 <div class="table-responsive">
@@ -147,9 +151,12 @@
                     <div class="card-body">
                         <form id="wishlistForm">
                             <label class="form-label">Cari/Tambah Menu:</label>
-                            <input type="text" id="produkInput" class="form-control mb-2" placeholder="Contoh: Es Teh...">
-                            <p class="small text-muted">Preview: <span id="previewProduk" class="fw-bold text-danger">-</span></p>
-                            <button type="button" id="tambahBtn" class="btn btn-outline-danger w-100">Tambahkan ke List</button>
+                            <input type="text" id="produkInput" class="form-control mb-2"
+                                placeholder="Contoh: Es Teh...">
+                            <p class="small text-muted">Preview: <span id="previewProduk"
+                                    class="fw-bold text-danger">-</span></p>
+                            <button type="button" id="tambahBtn" class="btn btn-outline-danger w-100">Tambahkan ke
+                                List</button>
                         </form>
                         <hr>
                         <ul id="daftarProduk" class="list-group list-group-flush">
@@ -181,14 +188,15 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
     <script>
-        $(document).ready(function() {
-            
+        $(document).ready(function () {
 
-            $('#produkInput').on('input', function() {
+
+            $('#produkInput').on('input', function () {
                 var teks = $(this).val();
-                if(teks === '') {
+                if (teks === '') {
                     $('#previewProduk').text('-');
                 } else {
                     $('#previewProduk').text(teks);
@@ -196,37 +204,37 @@
             });
 
 
-            $('#tambahBtn').click(function() {
+            $('#tambahBtn').click(function () {
                 var produk = $('#produkInput').val();
-                
+
                 if (produk.trim() !== "") {
                     var itemBaru = `
                         <li class="list-group-item d-flex justify-content-between align-items-center animate-item">
                             ${produk}
                             <button class="btn btn-sm btn-danger btn-hapus">&times;</button>
                         </li>`;
-                    
+
                     $('#daftarProduk').append(itemBaru);
-                    $('#produkInput').val(''); 
-                    $('#previewProduk').text('-'); 
+                    $('#produkInput').val('');
+                    $('#previewProduk').text('-');
                 } else {
                     alert("Mohon isi nama menu terlebih dahulu!");
                 }
             });
 
 
-            $('#daftarProduk').on('click', '.btn-hapus', function() {
-                $(this).parent().fadeOut(300, function() {
+            $('#daftarProduk').on('click', '.btn-hapus', function () {
+                $(this).parent().fadeOut(300, function () {
                     $(this).remove();
                 });
             });
 
 
-            $('#temaSelect').change(function() {
+            $('#temaSelect').change(function () {
                 var warna = $(this).val();
                 var body = $('body');
 
-                switch(warna) {
+                switch (warna) {
                     case 'white':
                         body.css('background-color', '#ffffff');
                         break;
@@ -243,4 +251,5 @@
         });
     </script>
 </body>
+
 </html>
